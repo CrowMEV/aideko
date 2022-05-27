@@ -7,7 +7,8 @@ from tools import get_ports_info
 
 
 async def ip_scaner(request):
-    syslog.syslog(syslog.LOG_INFO, request.remote)
+    print(request.text)
+    syslog.syslog(syslog.LOG_INFO, f'request from {request.remote}')
     result = []
     try:
         ip = request.query.get('ip', '127.0.0.1')
